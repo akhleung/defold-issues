@@ -291,6 +291,7 @@ function update(self)
     render.draw(predicates.screen, { constants = blur_constants})
     render.disable_texture("color_sampler")
 
+    -- copy to screen
     source, target = target, source
     render.set_render_target(render.RENDER_TARGET_DEFAULT)
     render.enable_material("copy")
