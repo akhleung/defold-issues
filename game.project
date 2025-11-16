@@ -1,6 +1,6 @@
 [bootstrap]
 main_collection = /main/main.collectionc
-render = /my.renderc
+render = /default.renderc
 
 [script]
 shared_state = 1
@@ -12,10 +12,27 @@ high_dpi = 1
 
 [android]
 input_method = HiddenInputField
+package = com.defold.example.basic3d
+
+[project]
+dependencies = 
+title = Basic 3D Project
+
+[physics]
+type = 3D
+
+[osx]
+bundle_identifier = com.defold.example.basic3d
+
+[ios]
+bundle_identifier = com.defold.example.basic3d
 
 [html5]
 scale_mode = stretch
 
-[project]
-title = Defold Issues
+[graphics]
+opengl_version_hint = 42
+
+[shader]
+exclude_gles_sm100 = 1
 

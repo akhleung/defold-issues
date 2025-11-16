@@ -1,0 +1,9 @@
+script: "/default.render_script"
+render_resources {
+  name: "box_blur"
+  path: "/materials/box_blur/box_blur.material"
+}
+render_resources {
+  name: "copy"
+  path: "/materials/copy/copy.material"
+}
