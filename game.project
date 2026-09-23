@@ -1,6 +1,6 @@
 [bootstrap]
 main_collection = /main/main.collectionc
-render = /default.renderc
+render = /defrend/render/defrend.renderc
 
 [script]
 shared_state = 1
@@ -15,8 +15,9 @@ input_method = HiddenInputField
 package = com.defold.example.basic3d
 
 [project]
-dependencies = 
 title = Basic 3D Project
+dependencies#0 = https://github.com/akhleung/defrend/archive/refs/tags/1.6.2.zip
+dependencies#1 = https://github.com/defold/extension-imgui/archive/refs/tags/2.14.0.zip
 
 [physics]
 type = 3D
@@ -35,4 +36,7 @@ opengl_version_hint = 42
 
 [shader]
 exclude_gles_sm100 = 1
+
+[input]
+game_binding = /imgui/bindings/imgui.input_bindingc
 

@@ -1,7 +1,19 @@
-mesh: "/builtins/assets/meshes/cube.dae"
-material: "/builtins/materials/model.material"
-textures: "/assets/images/green.png"
-skeleton: ""
-animations: ""
-default_animation: ""
+mesh: "/builtins/assets/gltf/cube.gltf"
 name: "unnamed"
+materials {
+  name: "default"
+  material: "/defrend/materials/geometry/model/model.material"
+  textures {
+    sampler: "albedo_map"
+    texture: "/assets/images/green.png"
+  }
+  textures {
+    sampler: "normal_map"
+    texture: "/defrend/assets/textures/flat.png"
+  }
+  textures {
+    sampler: "spec_glow_map"
+    texture: "/defrend/assets/textures/black.png"
+  }
+}
+create_go_bones: false
