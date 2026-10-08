@@ -1,10 +1,21 @@
 function init(self)
-	msg.post(".", "acquire_input_focus")
-	msg.post("@render:", "use_camera_projection")
-	msg.post("camera", "acquire_camera_focus")
+	self.url = msg.url(".")
+end
 
-	-- rotate the cube
-	-- go.animate(".", "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 6)
-	-- go.animate(".", "euler.x", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 9)
-	-- go.animate(".", "euler.y", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_INOUTQUAD, 12)
+local function count_table(t)
+	local count = 0
+	for _, _ in pairs(t) do
+		count = count + 1
+	end
+	return count
+end
+
+local MSG = hash("whatever")
+local count = 0
+local urls = {}
+function update(self, dt)
+	msg.post("/main#other", MSG, { url = self.url, payload = count })
+	urls[self.url] = count
+	count = count + 1
+	print("main.urls", count_table(urls))
 end

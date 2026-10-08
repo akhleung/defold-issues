@@ -1,0 +1,21 @@
+local senders = {}
+local urls = {}
+
+local function count_table(t)
+	local count = 0
+	for _, _ in pairs(t) do
+		count = count + 1
+	end
+	return count
+end
+
+local MSG = hash("whatever")
+function on_message(self, message_id, message, sender)
+	if message_id == MSG then
+		senders[sender] = message.payload
+		urls[message.url] = message.payload
+		print("other.urls:", count_table(urls))
+		print("other.senders:", count_table(senders))
+		print()
+	end
+end
